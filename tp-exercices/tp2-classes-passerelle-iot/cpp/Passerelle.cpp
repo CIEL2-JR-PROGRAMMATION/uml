@@ -18,8 +18,7 @@ Passerelle::~Passerelle() {
 void Passerelle::connecterCapteur(Capteur* capteur) {
     // ==============================================================================
     // TODO 1 : Gestion de l'agrégation
-    // Ajoutez le pointeur 'capteur' dans le vecteur 'm_capteurs' (vérifiez qu'il n'est pas nul)
-    // Indice : if (capteur != nullptr) m_capteurs.push_back(capteur);
+    // Vérifiez que le pointeur 'capteur' n'est pas nul, puis ajoutez-le au vecteur 'm_capteurs'.
     // ==============================================================================
 
 }
@@ -29,14 +28,8 @@ void Passerelle::executerCycleMesure() {
 
     // ==============================================================================
     // TODO 2 : Parcours polymorphique de la collection
-    // Parcourez 'm_capteurs'. Pour chaque capteur 'c', déclenchez son acquisition
-    // et affichez son label et sa valeur.
-    // Indice :
-    // for (Capteur* c : m_capteurs) {
-    //     if (c->acquerir()) {
-    //         std::cout << "   -> [" << c->getLabel() << "] Valeur = " << c->getValeur() << std::endl;
-    //     }
-    // }
+    // Parcourez 'm_capteurs'. Pour chaque capteur, déclenchez son acquisition
+    // et affichez son label et sa valeur si l'acquisition a réussi.
     // ==============================================================================
 
     m_afficheur.afficher(m_nom, "Capteurs: " + std::to_string(m_capteurs.size()) + " OK");

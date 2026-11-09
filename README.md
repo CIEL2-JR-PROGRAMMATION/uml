@@ -39,10 +39,9 @@ Ce dépôt constitue le **modèle officiel de cours, travaux pratiques et ressou
 ## 🚀 Utilisation de ce Dépôt (Template)
 
 ### Pour l'étudiant :
-1. Cliquez sur le bouton vert **« Use this template »** $\rightarrow$ **« Create a new repository »**.
-2. Sélectionnez l'organisation `CIEL2-JR-UML` et nommez votre dépôt (ex : `tp-uml-NOM`).
-3. Choisissez la visibilité **Privé**.
-4. Clonez votre dépôt pour travailler sous **VS Code** (avec l'extension PlantUML et le raccourci `Alt + D`) ou directement sur votre navigateur via la touche **`.`** de GitHub.
+1. Cliquez sur Clone Git repository**.
+2. Sélectionnez votre repo.
+3. Clonez votre dépôt pour travailler sous **VS Code** (avec l'extension PlantUML et le raccourci `Alt + D`) ou directement sur votre navigateur via la touche **`.`** de GitHub.
 
 ---
 

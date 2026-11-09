@@ -1,4 +1,4 @@
-﻿@startuml
+@startuml
 ' TP 4 : Diagramme de Séquence - Contrôle d'Accès RFID
 autonumber
 skinparam responseMessageBelowArrow true
@@ -28,12 +28,10 @@ deactivate API
 ' Complétez l'action de déverrouillage et la signalisation verte dans le cas valide.
 ' ------------------------------------------------------------------------------
 alt reponse == true [Accès Autorisé]
-    ' TODO 1.1 : Le contrôleur ordonne le déverrouillage pendant 5s
-    ' Indice : Ctrl -> Gache : deverrouiller(5)
+    ' TODO 1.1 : Le contrôleur ordonne à la gâche le déverrouillage pendant 5 secondes
     ' [ÉCRIVEZ LA LIGNE ICI]
     
-    ' TODO 1.2 : Le contrôleur déclenche la LED verte
-    ' Indice : Ctrl -> LED : accesAutorise()
+    ' TODO 1.2 : Le contrôleur déclenche la signalisation d'autorisation sur la LED
     ' [ÉCRIVEZ LA LIGNE ICI]
 
 else reponse == false [Accès Refusé - Déjà fourni]

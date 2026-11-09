@@ -1,4 +1,4 @@
-﻿@startuml
+@startuml
 ' TP 2 : Diagramme de Classes - Passerelle IoT (BTS CIEL)
 skinparam classAttributeIconSize 0
 
@@ -34,16 +34,18 @@ class Passerelle {
 ' ==============================================================================
 ' TODO 1 : Définir les deux classes de capteurs concrètes
 ' ------------------------------------------------------------------------------
-' 1.1 Classe CapteurTemperature (possède l'attribut privé "- m_unite : string")
+' 1.1 Classe CapteurTemperature :
+'     - Déclarez l'attribut privé pour l'unité de mesure (chaîne de caractères).
 class CapteurTemperature {
-    ' [ÉCRIVEZ L'ATTRIBUT ICI]
+    ' [ÉCRIVEZ L'ATTRIBUT PRIVÉ ICI]
     + CapteurTemperature(id: int, label: string)
     + acquerir() : bool
 }
 
-' 1.2 Classe CapteurHumidite (possède l'attribut privé "- m_pourcentageRelatif : bool")
+' 1.2 Classe CapteurHumidite :
+'     - Déclarez l'attribut privé indiquant si l'humidité est relative (booléen).
 class CapteurHumidite {
-    ' [ÉCRIVEZ L'ATTRIBUT ICI]
+    ' [ÉCRIVEZ L'ATTRIBUT PRIVÉ ICI]
     + CapteurHumidite(id: int, label: string)
     + acquerir() : bool
 }
@@ -58,16 +60,16 @@ class CapteurHumidite {
 
 ' ==============================================================================
 ' TODO 3 : Agrégation faible (o--)
-' La Passerelle référence entre 0 et plusieurs (0..*) Capteur :
-' Syntaxe : ClasseContenant o-- "0..*" ClasseContenue : nom_role
+' La Passerelle référence entre 0 et plusieurs (0..*) Capteur via son rôle m_capteurs :
+' Syntaxe : ClasseContenant o-- "cardinalite" ClasseContenue : nom_role
 ' ------------------------------------------------------------------------------
 ' [ÉCRIVEZ LA LIGNE D'AGRÉGATION ICI]
 
 
 ' ==============================================================================
 ' TODO 4 : Composition forte (*--)
-' La Passerelle contient obligatoirement 1 seul AfficheurLCD soudé au boîtier :
-' Syntaxe : ClasseContenant *-- "1" ClasseContenue : nom_role
+' La Passerelle contient obligatoirement 1 seul AfficheurLCD soudé au boîtier via m_afficheur :
+' Syntaxe : ClasseContenant *-- "cardinalite" ClasseContenue : nom_role
 ' ------------------------------------------------------------------------------
 ' [ÉCRIVEZ LA LIGNE DE COMPOSITION ICI]
 

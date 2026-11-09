@@ -21,8 +21,7 @@ activate Sonde
 ' ==============================================================================
 ' TODO 1 : Réponse du capteur (Message de retour en pointillés)
 ' La Sonde renvoie la valeur de température mesurée au contrôleur.
-' Syntaxe : Emetteur --> Destinataire : valeur
-' Indice : Sonde --> Ctrl : float (ex: 28.5)
+' Syntaxe générale : Emetteur --> Destinataire : valeur
 ' ------------------------------------------------------------------------------
 ' [ÉCRIVEZ LA LIGNE DE RETOUR CI-DESSOUS]
 
@@ -48,7 +47,7 @@ else temp < 30.0 [Cas Nominal : TODO 2 - Télémétrie standard QoS 0]
     ' ==============================================================================
     ' TODO 2 : Message asynchrone sans attente d'accusé de réception
     ' Le client MQTT envoie le message directement au broker avec flèche ouverte (->>)
-    ' Syntaxe : MQTT ->> Broker : PUBLISH (QoS=0, Topic="telemetrie/temp")
+    ' Syntaxe générale : Emetteur ->> Destinataire : message(parametres)
     ' ------------------------------------------------------------------------------
     Ctrl -> MQTT : publierMesure("telemetrie/temp", temp)
     activate MQTT
@@ -60,9 +59,6 @@ end
 ' ==============================================================================
 ' TODO 3 : Fin de cycle et mise en veille du microcontrôleur
 ' Appelez la méthode interne "miseEnSommeil()" sur Ctrl, puis désactivez sa ligne de vie.
-' Indice :
-' Ctrl -> Ctrl : miseEnSommeil()
-' deactivate Ctrl
 ' ------------------------------------------------------------------------------
 ' [ÉCRIVEZ LES 2 LIGNES CI-DESSOUS]
 

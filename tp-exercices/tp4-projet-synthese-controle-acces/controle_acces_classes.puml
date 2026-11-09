@@ -43,8 +43,7 @@ ControleurAcces *-- "1" GacheElectrique  : pilote
 ' Le contrôleur intègre en composition forte l'objet Signalisation (cardinalité 1, rôle integre).
 ' Syntaxe générale : ClasseContenant *-- "cardinalite" ClasseContenue : nom_role
 ' ------------------------------------------------------------------------------
-' [ÉCRIVEZ LA COMPOSITION ICI]
-
+ControleurAcces *-- "1" Signalisation : integre
 
 ' ==============================================================================
 ' TODO 2 : Agrégation faible (o--)
@@ -52,7 +51,6 @@ ControleurAcces *-- "1" GacheElectrique  : pilote
 ' (Le serveur API existe indépendamment du contrôleur local)
 ' Syntaxe générale : ClasseContenant o-- "cardinalite" ClasseContenue : nom_role
 ' ------------------------------------------------------------------------------
-' [ÉCRIVEZ L'AGRÉGATION ICI]
-
+ControleurAcces o-- "1" ClientAuthAPI : interroge
 
 @enduml

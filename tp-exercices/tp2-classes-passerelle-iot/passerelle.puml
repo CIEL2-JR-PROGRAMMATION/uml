@@ -37,7 +37,7 @@ class Passerelle {
 ' 1.1 Classe CapteurTemperature :
 '     - Déclarez l'attribut privé pour l'unité de mesure (chaîne de caractères).
 class CapteurTemperature {
-    ' [ÉCRIVEZ L'ATTRIBUT PRIVÉ ICI]
+    - m_unite : string
     + CapteurTemperature(id: int, label: string)
     + acquerir() : bool
 }
@@ -45,7 +45,7 @@ class CapteurTemperature {
 ' 1.2 Classe CapteurHumidite :
 '     - Déclarez l'attribut privé indiquant si l'humidité est relative (booléen).
 class CapteurHumidite {
-    ' [ÉCRIVEZ L'ATTRIBUT PRIVÉ ICI]
+    - m_pourcentageRelatif : bool
     + CapteurHumidite(id: int, label: string)
     + acquerir() : bool
 }
@@ -55,23 +55,21 @@ class CapteurHumidite {
 ' Indiquez que CapteurTemperature et CapteurHumidite héritent de Capteur :
 ' Syntaxe : ClasseMere <|-- ClasseFille
 ' ------------------------------------------------------------------------------
-' [ÉCRIVEZ LES 2 LIGNES D'HÉRITAGE ICI]
-
+Capteur <|-- CapteurTemperature
+Capteur <|-- CapteurHumidite
 
 ' ==============================================================================
 ' TODO 3 : Agrégation faible (o--)
 ' La Passerelle référence entre 0 et plusieurs (0..*) Capteur via son rôle m_capteurs :
 ' Syntaxe : ClasseContenant o-- "cardinalite" ClasseContenue : nom_role
 ' ------------------------------------------------------------------------------
-' [ÉCRIVEZ LA LIGNE D'AGRÉGATION ICI]
-
+Passerelle o-- "0..*" Capteur : m_capteurs
 
 ' ==============================================================================
 ' TODO 4 : Composition forte (*--)
 ' La Passerelle contient obligatoirement 1 seul AfficheurLCD soudé au boîtier via m_afficheur :
 ' Syntaxe : ClasseContenant *-- "cardinalite" ClasseContenue : nom_role
 ' ------------------------------------------------------------------------------
-' [ÉCRIVEZ LA LIGNE DE COMPOSITION ICI]
-
+Passerelle *-- "1" AfficheurLCD : m_afficheur
 
 @enduml

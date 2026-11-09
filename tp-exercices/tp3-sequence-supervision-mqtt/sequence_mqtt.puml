@@ -23,7 +23,7 @@ activate Sonde
 ' La Sonde renvoie la valeur de température mesurée au contrôleur.
 ' Syntaxe générale : Emetteur --> Destinataire : valeur
 ' ------------------------------------------------------------------------------
-' [ÉCRIVEZ LA LIGNE DE RETOUR CI-DESSOUS]
+Sonde --> Ctrl : temp
 
 deactivate Sonde
 
@@ -51,7 +51,7 @@ else temp < 30.0 [Cas Nominal : TODO 2 - Télémétrie standard QoS 0]
     ' ------------------------------------------------------------------------------
     Ctrl -> MQTT : publierMesure("telemetrie/temp", temp)
     activate MQTT
-    ' [ÉCRIVEZ CI-DESSOUS L'ENVOI DU PAQUET VERS LE BROKER (->>)]
+    MQTT ->> Broker : MQTT PUBLISH (QoS=0, Topic="telemetrie/temp")
     
     deactivate MQTT
 end
@@ -60,8 +60,8 @@ end
 ' TODO 3 : Fin de cycle et mise en veille du microcontrôleur
 ' Appelez la méthode interne "miseEnSommeil()" sur Ctrl, puis désactivez sa ligne de vie.
 ' ------------------------------------------------------------------------------
-' [ÉCRIVEZ LES 2 LIGNES CI-DESSOUS]
-
+Ctrl -> Ctrl : miseEnSommeil()
+deactivate Ctrl
 
 @enduml
 

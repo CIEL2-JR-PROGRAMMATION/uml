@@ -24,23 +24,20 @@ UC_Valider --> SrvAuth
 ' L'Agent de Sécurité est un Usager disposant de fonctions administratives supplémentaires.
 ' Syntaxe générale : ActeurFils --|> ActeurParent
 ' ------------------------------------------------------------------------------
-' [ÉCRIVEZ LA RELATION D'HÉRITAGE ICI]
-
+Secu --|> User
 
 ' ==============================================================================
 ' TODO 2 : Dépendance obligatoire <<include>>
 ' Présenter un badge implique TOUJOURS de valider les droits d'accès.
 ' Syntaxe générale : CasSource ..> CasObligatoire : <<include>>
 ' ------------------------------------------------------------------------------
-' [ÉCRIVEZ L'INCLUSION ICI]
-
+UC_Badge ..> UC_Valider : <<include>>
 
 ' ==============================================================================
 ' TODO 3 : Dépendance optionnelle <<extend>>
 ' En zone sensible, la saisie du code PIN prolonge la lecture du badge (facultatif).
 ' Syntaxe générale : CasBase <.. CasOptionnel : <<extend>>
 ' ------------------------------------------------------------------------------
-' [ÉCRIVEZ L'EXTENSION ICI]
-
+UC_Badge <.. UC_PIN : <<extend>>
 
 @enduml

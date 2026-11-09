@@ -66,9 +66,13 @@ class ControleurAcces:
         #    - Déclenchez la signalisation de refus d'accès
         #    - Renvoyez False
         # ==============================================================================
-        
-        # [ÉCRIVEZ VOTRE CODE CI-DESSOUS]
-        return False
+        if self._api.valider_droits(uid, pin):
+            self._gache.deverrouiller(5)
+            self._signal.acces_autorise()
+            return True
+        else:
+            self._signal.acces_refuse()
+            return False
 
 # ==============================================================================
 # Programme de test

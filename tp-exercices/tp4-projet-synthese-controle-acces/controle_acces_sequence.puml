@@ -29,10 +29,10 @@ deactivate API
 ' ------------------------------------------------------------------------------
 alt reponse == true [Accès Autorisé]
     ' TODO 1.1 : Le contrôleur ordonne à la gâche le déverrouillage pendant 5 secondes
-    ' [ÉCRIVEZ LA LIGNE ICI]
+    Ctrl -> Gache : deverrouiller(5)
     
     ' TODO 1.2 : Le contrôleur déclenche la signalisation d'autorisation sur la LED
-    ' [ÉCRIVEZ LA LIGNE ICI]
+    Ctrl -> LED : accesAutorise()
 
 else reponse == false [Accès Refusé - Déjà fourni]
     Ctrl -> LED : accesRefuse()

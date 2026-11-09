@@ -20,7 +20,8 @@ class Passerelle:
         # TODO 1 : Gestion de l'agrégation
         # Ajoutez l'objet 'capteur' à la liste 'self._capteurs' après avoir vérifié qu'il n'est pas None.
         # ==============================================================================
-        pass
+        if capteur is not None:
+            self._capteurs.append(capteur)
 
     def executer_cycle_mesure(self) -> None:
         print(f">> Lancement du cycle sur {self._nom} ({self._ip})")
@@ -29,6 +30,9 @@ class Passerelle:
         # Parcourez 'self._capteurs'. Pour chaque capteur, appelez sa méthode d'acquisition
         # et affichez son label et sa valeur si l'acquisition a réussi.
         # ==============================================================================
+        for c in self._capteurs:
+            if c.acquerir():
+                print(f"   -> [{c.label}] Valeur = {c.valeur}")
 
         self._afficheur.afficher(self._nom, f"Capteurs: {len(self._capteurs)} OK")
 

@@ -20,7 +20,9 @@ void Passerelle::connecterCapteur(Capteur* capteur) {
     // TODO 1 : Gestion de l'agrégation
     // Vérifiez que le pointeur 'capteur' n'est pas nul, puis ajoutez-le au vecteur 'm_capteurs'.
     // ==============================================================================
-
+    if (capteur != nullptr) {
+        m_capteurs.push_back(capteur);
+    }
 }
 
 void Passerelle::executerCycleMesure() {
@@ -31,6 +33,11 @@ void Passerelle::executerCycleMesure() {
     // Parcourez 'm_capteurs'. Pour chaque capteur, déclenchez son acquisition
     // et affichez son label et sa valeur si l'acquisition a réussi.
     // ==============================================================================
+    for (Capteur* c : m_capteurs) {
+        if (c != nullptr && c->acquerir()) {
+            std::cout << "   -> [" << c->getLabel() << "] Valeur = " << c->getValeur() << std::endl;
+        }
+    }
 
     m_afficheur.afficher(m_nom, "Capteurs: " + std::to_string(m_capteurs.size()) + " OK");
 }

@@ -36,7 +36,7 @@ Cloud --> UC_Urgence
 ' Syntaxe d'héritage : ActeurFils --|> ActeurParent
 ' ------------------------------------------------------------------------------
 ' Écrivez ci-dessous la relation d'héritage entre Tech et User :
-
+Tech --|> User
 
 ' ==============================================================================
 ' TODO 2 : Dépendance obligatoire <<include>>
@@ -45,7 +45,7 @@ Cloud --> UC_Urgence
 ' Syntaxe : CasSource ..> CasObligatoire : <<include>>
 ' ------------------------------------------------------------------------------
 ' Écrivez ci-dessous l'inclusion entre UC_Charge et UC_Auth :
-
+UC_Charge ..> UC_Auth : <<include>>
 
 ' ==============================================================================
 ' TODO 3 : Dépendance optionnelle <<extend>>
@@ -54,7 +54,7 @@ Cloud --> UC_Urgence
 ' Syntaxe : CasBase <.. CasOptionnel : <<extend>>
 ' ------------------------------------------------------------------------------
 ' Écrivez ci-dessous l'extension entre UC_Charge et UC_Recu :
-
+UC_Charge <.. UC_Recu : <<extend>>
 
 @enduml
 

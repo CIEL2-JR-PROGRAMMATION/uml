@@ -1,4 +1,4 @@
-﻿# TP 4 : Implémentation Logicielle Orientée Objet (Python 3)
+# TP 4 : Implémentation Logicielle Orientée Objet (Python 3)
 # Contrôle d'Accès Sécurisé par Badge RFID
 
 class LecteurRFID:
@@ -57,13 +57,13 @@ class ControleurAcces:
         
         # ==============================================================================
         # TODO : Logique de Contrôle d'Accès
-        # 1. Interrogez l'API : self._api.valider_droits(uid, pin)
-        # 2. Si valide :
-        #    - Déverrouillez la porte : self._gache.deverrouiller(5)
-        #    - Déclenchez la signalisation d'autorisation : self._signal.acces_autorise()
+        # 1. Interrogez l'API pour valider les droits avec l'UID et le code PIN
+        # 2. Si l'accès est autorisé :
+        #    - Déverrouillez la gâche électrique pendant 5 secondes
+        #    - Déclenchez la signalisation d'autorisation d'accès
         #    - Renvoyez True
-        # 3. Si invalide :
-        #    - Déclenchez la signalisation de refus : self._signal.acces_refuse()
+        # 3. Si l'accès est refusé :
+        #    - Déclenchez la signalisation de refus d'accès
         #    - Renvoyez False
         # ==============================================================================
         

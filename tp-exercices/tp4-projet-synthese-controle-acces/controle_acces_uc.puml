@@ -1,4 +1,4 @@
-﻿@startuml
+@startuml
 ' TP 4 : Cas d'Utilisation - Contrôle d'Accès RFID
 left to right direction
 skinparam packageStyle rectangle
@@ -21,8 +21,8 @@ UC_Valider --> SrvAuth
 
 ' ==============================================================================
 ' TODO 1 : Héritage entre Acteurs
-' L'Agent de Sécurité est un Usager disposant de fonctions administratives.
-' Syntaxe : Secu --|> User
+' L'Agent de Sécurité est un Usager disposant de fonctions administratives supplémentaires.
+' Syntaxe générale : ActeurFils --|> ActeurParent
 ' ------------------------------------------------------------------------------
 ' [ÉCRIVEZ LA RELATION D'HÉRITAGE ICI]
 
@@ -30,15 +30,15 @@ UC_Valider --> SrvAuth
 ' ==============================================================================
 ' TODO 2 : Dépendance obligatoire <<include>>
 ' Présenter un badge implique TOUJOURS de valider les droits d'accès.
-' Syntaxe : UC_Badge ..> UC_Valider : <<include>>
+' Syntaxe générale : CasSource ..> CasObligatoire : <<include>>
 ' ------------------------------------------------------------------------------
 ' [ÉCRIVEZ L'INCLUSION ICI]
 
 
 ' ==============================================================================
 ' TODO 3 : Dépendance optionnelle <<extend>>
-' En zone sensible, la saisie du code PIN prolonge la lecture du badge.
-' Syntaxe : UC_Badge <.. UC_PIN : <<extend>>
+' En zone sensible, la saisie du code PIN prolonge la lecture du badge (facultatif).
+' Syntaxe générale : CasBase <.. CasOptionnel : <<extend>>
 ' ------------------------------------------------------------------------------
 ' [ÉCRIVEZ L'EXTENSION ICI]
 
